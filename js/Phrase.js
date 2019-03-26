@@ -8,5 +8,32 @@ class Phrase {
   constructor(phrase) {
     this.phrase = phrase.toLowerCase();
   }
+
+  addPhraseToDisplay() {
+    // select the ul in the phrase section
+    const phraseSection = document.querySelector('#phrase ul');
+    console.log(phraseSection);
+
+    // loopinng through characters in the phrase, checks for space
+    for (let i = 0; i < this.phrase.length; i ++) {
+      let phraseChar = this.phrase.charAt([i]);
+
+      // create the li
+      const charLi = document.createElement('li');
+
+      // create necessary list items
+      if (phraseChar === " ") {
+        charLi.className = "space";
+        charLi.innerText = " ";
+      } else {
+        const charClass = `hide letter ${phraseChar}`;
+        charLi.className = charClass;
+        charLi.innerText = phraseChar;
+      }
+
+      // append to the ul
+      phraseSection.appendChild(charLi);
+    }
+  }
 }
 
