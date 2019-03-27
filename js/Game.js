@@ -21,5 +21,12 @@
     let phraseNum = Math.floor(Math.random() * this.phrases.length);
     this.activePhrase = this.phrases[phraseNum];
   }
+
+  // hides start screen overlay
+  startGame() {
+
+    // select and hide start screen overlay
+    document.querySelector('#overlay').style.visibility = 'hidden';
+  }
   
 }

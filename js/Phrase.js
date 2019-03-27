@@ -12,7 +12,6 @@ class Phrase {
   addPhraseToDisplay() {
     // select the ul in the phrase section
     const phraseSection = document.querySelector('#phrase ul');
-    console.log(phraseSection);
 
     // loopinng through characters in the phrase, checks for space
     for (let i = 0; i < this.phrase.length; i ++) {
