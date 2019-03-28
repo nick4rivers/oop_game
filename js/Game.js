@@ -12,7 +12,8 @@
       'jap anus relations',
       'anal bum cover',
       'la tits now',
-      'condom thing'
+      'condom thing',
+      'swords'
     ];
   }
 
@@ -25,6 +26,13 @@
   // hides start screen overlay
   startGame() {
 
+    // fire the get random phrase method to set active phrase property
+    this.getRandomPhrase();
+
+    // creates a new phrase object and add it using the phrase method
+    const phrase = new Phrase(this.activePhrase);
+    phrase.addPhraseToDisplay();
+    
     // select and hide start screen overlay
     document.querySelector('#overlay').style.visibility = 'hidden';
   }
