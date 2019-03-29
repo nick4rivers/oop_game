@@ -36,5 +36,10 @@
     // select and hide start screen overlay
     document.querySelector('#overlay').style.visibility = 'hidden';
   }
+
+  // handle interaction method
+  handleInteraction() {
+    
+  }
   
 }

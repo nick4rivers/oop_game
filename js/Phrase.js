@@ -25,14 +25,21 @@ class Phrase {
         charLi.className = "space";
         charLi.innerText = " ";
       } else {
-        const charClass = `hide letter ${phraseChar}`;
+        const charClass = `show letter ${phraseChar}`;
         charLi.className = charClass;
         charLi.innerText = phraseChar;
       }
-
       // append to the ul
       phraseSection.appendChild(charLi);
     }
   }
+
+
+  // check the letter
+  checkLetter() {
+
+  }
+
+
 }
 

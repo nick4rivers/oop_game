@@ -13,3 +13,14 @@ startButton.addEventListener('click', (e) => {
   game.startGame();
 });
 
+
+
+// let's start getting the keyboard functionality together
+keyTrigger = document.querySelector('#qwerty');
+keyTrigger.addEventListener('click', (e) => {
+  e.preventDefault();
+  keyPressed = e.target.textContent;
+  console.log(keyPressed);
+
+});
+
