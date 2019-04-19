@@ -9,6 +9,7 @@ class Phrase {
     this.phrase = phrase.toLowerCase();
   }
 
+  // adds the phrase to the display by creating elements
   addPhraseToDisplay() {
     // select the ul in the phrase section
     const phraseSection = document.querySelector('#phrase ul');
@@ -25,7 +26,7 @@ class Phrase {
         charLi.className = "space";
         charLi.innerText = " ";
       } else {
-        const charClass = `show letter ${phraseChar}`;
+        const charClass = `hide letter ${phraseChar}`;
         charLi.className = charClass;
         charLi.innerText = phraseChar;
       }
@@ -34,10 +35,28 @@ class Phrase {
     }
   }
 
+  // Checks if clicked letter is part of the phrase
+  checkLetter(keyPressed) {
+    if (this.phrase.includes(keyPressed)) {
+      console.log('Yeah bitch');
+      return true;
+    } else {
+      console.log('No Bitch');
+      return false;
+    }
+  }
 
-  // check the letter
-  checkLetter() {
-
+  // // check the letter
+  showMatchedLetter(keyPressed) {
+    const letterElements = document.querySelector('#phrase ul').children;
+      for (let letter of letterElements) {
+        if (keyPressed === letter.innerText) {
+          letter.classList.remove('hide');
+          letter.classList.add('show');
+        } else {
+      // remove a life from the board
+     }
+   }
   }
 
 

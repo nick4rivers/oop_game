@@ -17,21 +17,19 @@
     ];
   }
 
-  // just randomly selects a phrase and sets it to the active phrase for the object
+  // just gets a random number to select a phrase later
   getRandomPhrase() {
-    let phraseNum = Math.floor(Math.random() * this.phrases.length);
-    this.activePhrase = this.phrases[phraseNum];
+    return Math.floor(Math.random() * this.phrases.length);
   }
 
   // hides start screen overlay
   startGame() {
-
-    // fire the get random phrase method to set active phrase property
-    this.getRandomPhrase();
-
+    
     // creates a new phrase object and add it using the phrase method
-    const phrase = new Phrase(this.activePhrase);
-    phrase.addPhraseToDisplay();
+    this.activePhrase = new Phrase(this.phrases[this.getRandomPhrase()]);
+    
+    // add the phrase to the display
+    this.activePhrase.addPhraseToDisplay();
     
     // select and hide start screen overlay
     document.querySelector('#overlay').style.visibility = 'hidden';

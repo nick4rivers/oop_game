@@ -4,23 +4,26 @@
 
  // jshint esversion: 6
 
+// crate a game object
+const game = new Game();
+
 
 // add a listener to the start button that fires the startGame method
-startButton = document.querySelector('#btn__reset');
+const startButton = document.querySelector('#btn__reset');
 startButton.addEventListener('click', (e) => {
-  e.preventDefault();
-  const game = new Game();
   game.startGame();
 });
 
 
-
 // let's start getting the keyboard functionality together
-keyTrigger = document.querySelector('#qwerty');
-keyTrigger.addEventListener('click', (e) => {
-  e.preventDefault();
-  keyPressed = e.target.textContent;
+
+// first, just set the event listener and get the text content of clicked key
+const keyBoard = document.querySelector('#qwerty');
+keyBoard.addEventListener('click', (e) => {
+  let keyPressed = e.target.textContent;
   console.log(keyPressed);
-
+  
+  if (game.activePhrase.checkLetter(keyPressed)) {
+    game.activePhrase.showMatchedLetter(keyPressed);
+  }
 });
-
