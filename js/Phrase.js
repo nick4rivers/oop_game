@@ -36,8 +36,8 @@ class Phrase {
   }
 
   // Checks if clicked letter is part of the phrase
-  checkLetter(keyPressed) {
-    if (this.phrase.includes(keyPressed)) {
+  checkLetter(keyClicked) {
+    if (this.phrase.includes(keyClicked)) {
       console.log('Yeah bitch');
       return true;
     } else {
@@ -47,10 +47,10 @@ class Phrase {
   }
 
   // // check the letter
-  showMatchedLetter(keyPressed) {
+  showMatchedLetter(keyClicked) {
     const letterElements = document.querySelector('#phrase ul').children;
       for (let letter of letterElements) {
-        if (keyPressed === letter.innerText) {
+        if (keyClicked === letter.innerText) {
           letter.classList.remove('hide');
           letter.classList.add('show');
         } else {
